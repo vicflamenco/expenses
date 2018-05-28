@@ -1,8 +1,8 @@
 const PORT = 3000;
 
-var express = require('express');
-var path = require('path');
-var app = express();
+const express = require('express');
+const path = require('path');
+const app = express();
 
 app.use(express.static('public'));
 
@@ -11,5 +11,5 @@ app.get('/', function(req, res) {
 });
 
 app.listen(PORT, function() {
-    console.log("Server up and listening.");
+    console.log("Server up and listening on port: " + PORT);
 });
