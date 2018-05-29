@@ -1,15 +1,13 @@
-const PORT = 3000;
-
 const express = require('express');
-const path = require('path');
+//const path = require('path');
+const appRouter = require('./routes/appRouter');
+
+const PORT = process.env.PORT || 8080;
 const app = express();
 
-app.use(express.static('public'));
+//app.use(express.static('public'));
+appRouter(app);
 
-app.get('/', function(req, res) {
-    res.sendFile(path.join(__dirname, 'index.html'));
-});
-
-app.listen(PORT, function() {
+app.listen(PORT, () => {
     console.log("Server up and listening on port: " + PORT);
 });
